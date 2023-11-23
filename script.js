@@ -43,6 +43,7 @@ if (obj.sell !='' && obj.phone!=''){
     sellItemList.push(obj)
 }
 console.log(sellItemList)
+sendIt({item:obj.sell,phone:obj.phone})
 clearinputs()
 draw()
 }
