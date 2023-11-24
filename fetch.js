@@ -1,5 +1,8 @@
+const serverAddress = 'https://jataroserver.onrender.com'
+const tempAddress = 'http://127.0.0.1:3000/req'
+
 const sendIt = async({item,phone})=>{
-await fetch('https://jataroserver.onrender.com/req',{
+await fetch(`${serverAddress}/req`,{
     method:'post',
     headers:{
         'Content-Type':'application/json'
@@ -7,3 +10,11 @@ await fetch('https://jataroserver.onrender.com/req',{
     body:JSON.stringify({item:item,phone:phone})
 
 })}
+
+const getIt = async () =>{
+    const req=await fetch(`${serverAddress}/res`)
+
+    const data = await req.json()
+    // console.log(data)
+    return data
+}
